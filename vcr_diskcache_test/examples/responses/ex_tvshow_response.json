@@ -1,0 +1,99 @@
+{
+    "adult": false,
+    "backdrop_path": "/6c0hFsGCPyB6QfQNliPEQ4nt7Qz.jpg",
+    "created_by": [],
+    "episode_run_time": [
+        45
+    ],
+    "first_air_date": "2023-06-02",
+    "genres": [
+        {
+            "id": 18,
+            "name": "Drama"
+        }
+    ],
+    "homepage": "",
+    "id": 196550,
+    "in_production": false,
+    "languages": [
+        "zh"
+    ],
+    "last_air_date": "2023-06-18",
+    "last_episode_to_air": {
+        "id": 4488017,
+        "name": "Episode 32",
+        "overview": "",
+        "vote_average": 0,
+        "vote_count": 0,
+        "air_date": "2023-06-18",
+        "episode_number": 32,
+        "production_code": "",
+        "runtime": 45,
+        "season_number": 1,
+        "show_id": 196550,
+        "still_path": null
+    },
+    "name": "A Date With the Future",
+    "next_episode_to_air": {
+        "id": 4488018,
+        "name": "Episode 33",
+        "overview": "",
+        "vote_average": 0,
+        "vote_count": 0,
+        "air_date": "2023-06-19",
+        "episode_number": 33,
+        "production_code": "",
+        "runtime": 45,
+        "season_number": 1,
+        "show_id": 196550,
+        "still_path": null
+    },
+    "networks": [
+        {
+            "id": 2007,
+            "logo_path": "/uBCIoV9AUGIdfXTrtJ6CRIxOZF6.png",
+            "name": "Tencent Video",
+            "origin_country": "CN"
+        }
+    ],
+    "number_of_episodes": 36,
+    "number_of_seasons": 1,
+    "origin_country": [
+        "CN"
+    ],
+    "original_language": "zh",
+    "original_name": "照亮你",
+    "overview": "Ten years ago, Xu Lai was trapped in the earthquake and rescued by fireman, Jin Shichuan and the search and rescue dog, \"Zhuifeng\". In order to appease the injured Xu Lai, Jinshichuan promised her ten-year appointment. Ten years later, Xu Lai returned to China to become a reporter and an international dog trainer. He met Jin Shichuan at the rescue site. Jin Shichuan not only didn't recognize Xu Lai, but also misunderstood her as an unscrupulous reporter. Xu Lai corrected the name of the rescue team despite the misunderstanding. When establishing the search and rescue dog team, Xu Lai became Jinshichuan's partner as an international dog trainer, conquered the people with excellent professional skills, and gave his rescue dog \"Ping'an\" to Jin Shichuan. As journalists and firefighters, they always meet in the front line of danger. The two of them who have been tested by life and death have gradually warmed up their feelings.",
+    "popularity": 1171.542,
+    "poster_path": "/uYMaig5XjfeeTkmwOzqrFAdnngk.jpg",
+    "production_companies": [],
+    "production_countries": [
+        {
+            "iso_3166_1": "CN",
+            "name": "China"
+        }
+    ],
+    "seasons": [
+        {
+            "air_date": "2023-06-02",
+            "episode_count": 36,
+            "id": 285874,
+            "name": "Season 1",
+            "overview": "",
+            "poster_path": "/2vqziDe3s8M1DtdZTUPccTXG4Wm.jpg",
+            "season_number": 1
+        }
+    ],
+    "spoken_languages": [
+        {
+            "english_name": "Mandarin",
+            "iso_639_1": "zh",
+            "name": "普通话"
+        }
+    ],
+    "status": "Ended",
+    "tagline": "",
+    "type": "Scripted",
+    "vote_average": 6,
+    "vote_count": 3
+}

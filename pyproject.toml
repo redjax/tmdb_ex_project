@@ -1,0 +1,56 @@
+[project]
+name = "vcr_diskcache_test"
+version = "0.1"
+description = "Testing VCR & diskcache utils"
+authors = [{ name = "None", email = "none@none.com" }]
+dependencies = [
+    "stackprinter>=0.2.10",
+    "pydantic[dotenv]>=1.10.7",
+    "msgpack>=1.0.5",
+    "httpx>=0.24.1",
+    "arrow>=1.2.3",
+    "requests>=2.30.0",
+    "requests-cache>=1.0.1",
+    "sqlalchemy>=2.0.15",
+    "psycopg2-binary>=2.9.6",
+    "pyodbc>=4.0.39",
+    "diskcache>=5.6.1",
+]
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "pytest>=7.3.1",
+    "ruff>=0.0.269",
+    "black>=23.3.0",
+    "pytest-xdist>=3.3.1",
+    "pytest-vcr>=1.0.2",
+    "notebook>=6.5.4",
+    "jupyter>=1.0.0",
+    "pandas>=2.0.2",
+]
+
+[tool.pdm.scripts]
+
+## Format scripts
+# Check only, don't fix
+ruff = { cmd = "ruff check ." }
+#  Check and fix
+format = { cmd = "ruff check . --fix" }
+
+## Start scripts
+#  Run main app or script. Launches from app/
+start = { shell = "cd vcr_diskcache_test && pdm run python main.py" }
+
+## Export requirement scripts
+#  Export production requirements
+export = { cmd = "pdm export --prod -o requirements.txt --without-hashes" }
+#  Export only development requirements
+export-dev = { cmd = "pdm export -d -o requirements.dev.txt --without-hashes" }
+## Uncomment if/when using a CI group
+# export-ci = {cmd = "pdm export -G ci -o requirements.ci.txt --without-hashes"}
+
+## Pytest
+test = { shell = "cd vcr_diskcache_test && pdm run pytest -v -rAf --tb=line" }
+test-all = { shell = "cd vcr_diskcache_test && pdm run pytest -v -rAf --tb=line" }

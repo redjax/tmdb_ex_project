@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: ''
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmOWJkZTFhZWUwOTdhNGIxZjAxOWRiYjc5YTE0NjQ3MCIsInN1YiI6IjY0ODNhZjJiZTM3NWMwMDBhY2M0ZDM5YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.eNn-m_WlZtGkrqtptMGHberdx2ch4_RVA12cEv1hnhE
+      connection:
+      - keep-alive
+      host:
+      - api.themoviedb.org
+      user-agent:
+      - python-httpx/0.24.1
+    method: GET
+    uri: https://api.themoviedb.org/3/authentication/bad
+  response:
+    content: '{"success":false,"status_code":34,"status_message":"The resource you
+      requested could not be found."}'
+    headers:
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Mon, 19 Jun 2023 04:30:39 GMT
+      Server:
+      - openresty
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Via:
+      - 1.1 0c482288431692a08571c47359ca2c80.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - pckSnCQ88KrMKfVIpB3qvZteJDhFdupsp17Gjo71JjBgz3FO4oVN4A==
+      X-Amz-Cf-Pop:
+      - IAD55-P3
+      X-Cache:
+      - Error from cloudfront
+      X-Cascade:
+      - pass
+    http_version: HTTP/1.1
+    status_code: 404
+version: 1
