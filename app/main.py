@@ -20,7 +20,12 @@ log = get_logger(__name__, level=logging_settings.LOG_LEVEL)
 
 from core.db import Base, create_base_metadata, get_engine, get_session
 from domain.schemas.tmdb import tmdb_media_schemas, tmdb_responses
-from lib.constants import auth_endpoint, movie_endpoint, token_endpoint
+from lib.constants import (
+    auth_endpoint,
+    basic_auth_headers,
+    movie_endpoint,
+    token_endpoint,
+)
 from utils.time_utils import benchmark
 
 engine = get_engine(connection="db/demo.sqlite", echo=True)
@@ -37,7 +42,7 @@ def main():
     if not test_key():
         raise ValueError(f"Unable to validate API key.")
 
-    _auth = authenticate(api_settings.API_READ_KEY)
+    _auth = authenticate(headers=basic_auth_headers)
     log.debug(f"Auth response: {_auth}")
 
     _token = get_request_token()
@@ -66,11 +71,11 @@ def main():
         f"Found {pop_tv.total_results} popular TV shows. Results in {pop_tv.total_pages} pages."
     )
 
-    pop_tv_shows: list[tmdb_media_schemas.TVShow] = []
+    pop_tv_shows: list[tmdb_media_schemas.MediaTVShow] = []
 
     for tv_show in pop_tv.results:
-        pop_tv_show: tmdb_media_schemas.TVShow = tmdb_media_schemas.TVShow.parse_obj(
-            tv_show
+        pop_tv_show: tmdb_media_schemas.MediaTVShow = (
+            tmdb_media_schemas.MediaTVShow.parse_obj(tv_show)
         )
 
         pop_tv_shows.append(pop_tv_show)
