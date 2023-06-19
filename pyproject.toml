@@ -1,7 +1,7 @@
 [project]
-name = "vcr_diskcache_test"
+name = "tmdb_ex_project"
 version = "0.1"
-description = "Testing VCR & diskcache utils"
+description = "Example project to demonstrate different utilities when interacting with an API. Uses TMDB's API for examples: https://developer.themoviedb.org/reference/"
 authors = [{ name = "None", email = "none@none.com" }]
 dependencies = [
     "stackprinter>=0.2.10",
@@ -41,7 +41,7 @@ format = { cmd = "ruff check . --fix" }
 
 ## Start scripts
 #  Run main app or script. Launches from app/
-start = { shell = "cd vcr_diskcache_test && pdm run python main.py" }
+start = { shell = "cd app && pdm run python main.py" }
 
 ## Export requirement scripts
 #  Export production requirements
@@ -52,5 +52,5 @@ export-dev = { cmd = "pdm export -d -o requirements.dev.txt --without-hashes" }
 # export-ci = {cmd = "pdm export -G ci -o requirements.ci.txt --without-hashes"}
 
 ## Pytest
-test = { shell = "cd vcr_diskcache_test && pdm run pytest -v -rAf --tb=line" }
-test-all = { shell = "cd vcr_diskcache_test && pdm run pytest -v -rAf --tb=line" }
+test = { shell = "cd app && pdm run pytest -v -rAf --tb=line" }
+test-all = { shell = "cd app && pdm run pytest -v -rAf --tb=line" }

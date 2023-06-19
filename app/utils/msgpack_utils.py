@@ -13,7 +13,7 @@ from utils.logger import get_logger
 
 log = get_logger(__name__, level=logging_settings.LOG_LEVEL)
 
-from vcr_diskcache_test.lib.constants import default_serialize_dir
+from lib.constants import default_serialize_dir
 
 def msgpack_serialize(
     _json: dict = None, filename: str = None
