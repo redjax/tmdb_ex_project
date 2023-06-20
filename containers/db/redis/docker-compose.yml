@@ -1,0 +1,16 @@
+version: '3.8'
+
+volumes:
+  cache:
+    driver: local
+
+services:
+  cache:
+    image: redis:bookworm
+    restart: unless-stopped
+    ports:
+      - ${REDIS_PORT:-6379}:6379
+      - ${REDIS_WEB_PORT:-8001}:8001
+    command: redis-server --save 20 1 --loglevel warning --requirepass ${REDIS_PASS}
+    volumes:
+      - ${REDIS_CACHE_DIR:-cache}:/data
