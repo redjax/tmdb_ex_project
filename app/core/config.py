@@ -1,5 +1,4 @@
-"""
-Class-based app configuration with Pydantic.
+"""Class-based app configuration with Pydantic.
 
 Add additional classes by following examples in the existing
 classes. Note that you *can* re-use an env file.
