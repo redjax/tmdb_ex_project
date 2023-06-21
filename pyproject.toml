@@ -15,6 +15,7 @@ dependencies = [
     "psycopg2-binary>=2.9.6",
     "pyodbc>=4.0.39",
     "diskcache>=5.6.1",
+    "redis>=4.5.5",
 ]
 requires-python = ">=3.10"
 license = { text = "MIT" }
