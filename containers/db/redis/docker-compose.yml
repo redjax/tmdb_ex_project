@@ -1,0 +1,47 @@
+version: '3.8'
+
+volumes:
+  cache:
+    driver: local
+
+services:
+
+  ## https://hub.docker.com/_/redis
+  redis:
+    image: redis:bookworm
+    container_name: ${REDIS_CONTAINER_NAME:-redis}
+    restart: unless-stopped
+    ports:
+      - ${REDIS_PORT:-6379}:6379
+    command:
+      [
+        "redis-server",
+        "--save",
+        "20",
+        "1",
+        "--loglevel",
+        "warning",
+        "--requirepass",
+        "${REDIS_PASS:-redis123}"
+      ]
+    volumes:
+      - ${REDIS_CACHE_DIR:-cache}:/data
+
+  ## Optional
+  #  https://hub.docker.com/r/rediscommander/redis-commander
+  redis-commander:
+    container_name: redis-commander
+    hostname: redis-commander
+    image: rediscommander/redis-commander:latest
+    restart: unless-stopped
+    environment:
+      - REDIS_HOSTS=${REDIS_COMMANDER_HOSTS:-local:redis}
+      - REDIS_HOST=${REDIS_COMMANDER_HOST:-redis}
+      - REDIS_PORT=${REDIS_COMMANDER_PORT:-6379}
+      - REDIS_PASSWORD=${REDIS_PASS:-redis123}
+      - HTTP_USER=${REDIS_COMMANDER_HTTP_USER:-root}
+      - HTTP_PASSWORD=${REDIS_COMMANDER_HTTP_PASS:-redis123}
+    ports:
+      - ${REDIS_COMMANDER_WEB_PORT:-8081}:8081
+    depends_on:
+      - redis
