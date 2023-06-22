@@ -44,6 +44,7 @@ class APISettings(BaseSettings):
 class RedisSettings(BaseSettings):
     host: str = Field(default="localhost", env="REDIS_HOST")
     port: int = Field(default=6379, env="REDIS_PORT")
+    username: str = Field(default=None, env="REDIS_USERNAME")
     ## Hide password from repr, i.e. when printing an instance of this class.
     password: str = Field(default=None, env="REDIS_PASS", repr=False)
 
