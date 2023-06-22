@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Optional
 
 from pydantic import BaseModel, BaseSettings, Field, ValidationError, validator
 
@@ -27,6 +28,17 @@ class APISettings(BaseSettings):
 
     class Config:
         env_file = f"{THIS_DIR}/env_files/api.env"
+
+
+class RedisSettings(BaseSettings):
+    host: str = Field(default="localhost", env="REDIS_HOST")
+    port: int = Field(default=6379, env="REDIS_PORT")
+    username: str = Field(default=None, env="REDIS_USERNAME")
+    ## Hide password from repr, i.e. when printing an instance of this class.
+    password: str = Field(default=None, env="REDIS_PASS", repr=False)
+
+    class Config:
+        env_file = f"{THIS_DIR}/env_files/db.env"
 
 
 class LoggingSetting(BaseSettings):
